@@ -28,9 +28,7 @@ export function Hero() {
         </h1>
 
         <p className="hero-caption">
-          Amer Mysara Yousif — AI filmmaker, visual storyteller, senior content creator. Directing
-          cinematic shorts and branded films at the seam of generative imagery and live-action craft.
-          Based in Dubai, shooting everywhere.
+          Creative & AI content creator and emerging filmmaker driven by a passion for transforming ideas into powerful visual stories. With over 6 years of experience in visual storytelling, graphic design, and video production, I blend creativity and technology to craft cinematic narratives that engage, move, and inspire. Skilled in Adobe Creative Suite, sound design, and social media content strategy, I create content that not only captures attention but leaves a lasting impression.
         </p>
       </div>
       <div className="hero-scroll">SCROLL ↓ REEL.01</div>
