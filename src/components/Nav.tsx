@@ -1,4 +1,5 @@
 import type { MouseEvent } from 'react'
+import { ThemeToggle } from './ThemeToggle'
 
 const LINKS = [
   { href: '#about', idx: '02', label: 'About' },
@@ -23,16 +24,19 @@ export function Nav() {
       <div className="logo">
         AMER<span>.</span>MYSARA
       </div>
-      <ul>
-        {LINKS.map((l) => (
-          <li key={l.href}>
-            <a href={l.href} onClick={smoothScroll}>
-              <span className="nav-idx">{l.idx}</span>
-              {l.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="nav-right">
+        <ul>
+          {LINKS.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} onClick={smoothScroll}>
+                <span className="nav-idx">{l.idx}</span>
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ThemeToggle />
+      </div>
     </nav>
   )
 }

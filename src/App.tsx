@@ -20,7 +20,6 @@ export default function App() {
     <>
       <Overlays />
       <Nav />
-      <ThemeToggle />
 
       <Hero />
       <Marquee />

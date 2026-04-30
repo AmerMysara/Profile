@@ -10,10 +10,10 @@
   --ink-faint: #565259;
   --line: #1c1c1f;
   --grain: 0.1;
-  --display-font: 'Antonio', 'Oswald', sans-serif;
+  --display-font: 'Plus Jakarta Sans', system-ui, sans-serif;
   --neutral-font: 'Inter', system-ui, sans-serif;
-  --mono-font: 'JetBrains Mono', ui-monospace, monospace;
-  --serif-font: 'Bodoni Moda', serif;
+  --mono-font: 'DM Mono', ui-monospace, monospace;
+  --serif-font: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 html[data-theme='light'] {
   --bg: #f2efe9;
@@ -38,7 +38,7 @@ html[data-type='serif-mono'] {
   --neutral-font: 'JetBrains Mono', ui-monospace, monospace;
 }
 html[data-type='grotesk-mono'] {
-  --display-font: 'Inter', system-ui, sans-serif;
+  --display-font: 'Plus Jakarta Sans', system-ui, sans-serif;
   --neutral-font: 'Inter', system-ui, sans-serif;
 }
 
@@ -154,8 +154,8 @@ h1,
 h2,
 h3 {
   font-family: var(--display-font);
-  letter-spacing: -0.01em;
-  font-stretch: condensed;
+  letter-spacing: -0.03em;
+  font-stretch: normal;
 }
 
 /* Top nav */
@@ -187,6 +187,11 @@ nav.top .logo {
 nav.top .logo span {
   color: var(--accent);
 }
+nav.top .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
 nav.top ul {
   list-style: none;
   display: flex;
@@ -217,10 +222,6 @@ nav.top .nav-idx {
 
 /* Theme toggle */
 .theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 48px;
-  z-index: 110;
   background: none;
   border: none;
   font-family: var(--mono-font);
@@ -235,8 +236,8 @@ nav.top .nav-idx {
   gap: 8px;
 }
 @media (max-width: 768px) {
-  .theme-toggle {
-    right: 24px;
+  nav.top .nav-right {
+    gap: 24px;
   }
 }
 .theme-toggle .dot {
@@ -258,13 +259,12 @@ header.hero {
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 56px;
+  align-items: center;
 }
 .hero-still {
   position: absolute;
   inset: 0;
-  background: #0a0a0c;
+  background: var(--bg);
   overflow: hidden;
 }
 .hero-still::before {
@@ -283,16 +283,54 @@ header.hero {
     radial-gradient(ellipse 60% 70% at 75% 65%, rgba(255, 180, 120, 0.12), transparent 70%),
     linear-gradient(180deg, #0f0f12 0%, #050506 100%);
 }
-.hero-still::after {
-  content: 'FILM STILL — 2.39 : 1   //   PLACEHOLDER';
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  font-family: var(--mono-font);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  color: rgba(255, 255, 255, 0.35);
+html[data-theme='light'] .hero-still::before,
+html[data-theme='ivory'] .hero-still::before {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 6px,
+      rgba(0, 0, 0, 0.018) 6px,
+      rgba(0, 0, 0, 0.018) 7px
+    ),
+    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(0, 80, 200, 0.10), transparent 70%),
+    radial-gradient(ellipse 60% 70% at 75% 65%, rgba(220, 160, 80, 0.08), transparent 70%),
+    linear-gradient(160deg, #eae6de 0%, #f5f2ec 60%, #e8e3d8 100%);
 }
+.hero-profile-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 60% 40%, black 20%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 80% at 60% 40%, black 20%, transparent 80%);
+}
+.hero-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0.8;
+  mix-blend-mode: luminosity;
+  filter: contrast(1.1) brightness(0.9);
+}
+html[data-theme='light'] .hero-profile-image img,
+html[data-theme='ivory'] .hero-profile-image img {
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+  filter: contrast(1.05) brightness(0.95);
+}
+@media (max-width: 768px) {
+  .hero-profile-image {
+    width: 100%;
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, black 10%, transparent 70%);
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, black 10%, transparent 70%);
+  }
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -304,6 +342,16 @@ header.hero {
     rgba(7, 7, 8, 0.9) 100%
   );
 }
+html[data-theme='light'] .hero-overlay,
+html[data-theme='ivory'] .hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(230, 225, 215, 0.3) 0%,
+    transparent 25%,
+    transparent 50%,
+    rgba(225, 220, 210, 0.55) 100%
+  );
+}
 .hero-content {
   position: relative;
   z-index: 2;
@@ -313,7 +361,7 @@ header.hero {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 28px;
+  margin-bottom: 64px;
   font-family: var(--mono-font);
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -331,32 +379,54 @@ header.hero {
 .hero-meta-row .v {
   color: var(--ink);
 }
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: flex-start;
+}
 h1.hero-title {
   font-family: var(--display-font);
-  font-weight: 500;
-  font-size: clamp(64px, 13vw, 200px);
-  line-height: 0.88;
+  font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 56px);
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
   color: var(--ink);
-  font-stretch: condensed;
 }
 h1.hero-title .ital {
-  font-family: var(--serif-font);
   font-style: italic;
   font-weight: 400;
-  text-transform: none;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  letter-spacing: -0.01em;
+  color: var(--ink-dim);
 }
 h1.hero-title .accent {
   color: var(--accent);
 }
 .hero-caption {
-  max-width: 520px;
-  margin-top: 36px;
+  max-width: 480px;
+  margin-top: 32px;
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.65;
+  color: rgba(242, 239, 233, 0.88);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+html[data-theme='light'] .hero-caption,
+html[data-theme='ivory'] .hero-caption {
+  color: rgba(12, 12, 13, 0.78);
+}
+html[data-theme='light'] h1.hero-title,
+html[data-theme='ivory'] h1.hero-title {
+  color: var(--ink);
+}
+@media (max-width: 768px) {
+  .hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+html[data-theme='light'] .hero-meta-row,
+html[data-theme='ivory'] .hero-meta-row {
   color: var(--ink-dim);
 }
 .hero-scroll {
@@ -457,17 +527,17 @@ section {
   margin-bottom: 12px;
 }
 .section-header h2 {
-  font-size: clamp(40px, 6vw, 88px);
-  font-weight: 500;
+  font-size: clamp(36px, 5.5vw, 80px);
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 0.95;
+  letter-spacing: -0.04em;
 }
 .section-header h2 .ital {
-  font-family: var(--serif-font);
   font-style: italic;
   font-weight: 400;
   text-transform: none;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--ink-dim);
 }
 .section-header .sh-right {
@@ -501,12 +571,13 @@ section {
   }
 }
 .about-body p {
-  font-family: var(--serif-font);
-  font-size: clamp(20px, 2.2vw, 30px);
-  line-height: 1.35;
+  font-family: var(--neutral-font);
+  font-size: clamp(18px, 1.9vw, 26px);
+  line-height: 1.5;
   margin-bottom: 28px;
   color: var(--ink);
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
+  font-weight: 400;
 }
 .about-body p.dim {
   color: var(--ink-dim);
@@ -564,15 +635,14 @@ section {
 }
 .pillar .p-title {
   font-family: var(--display-font);
-  font-size: clamp(28px, 3.2vw, 46px);
-  font-weight: 500;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
-  letter-spacing: -0.01em;
-  font-stretch: condensed;
+  letter-spacing: -0.03em;
+  font-stretch: normal;
 }
 .pillar .p-title .sub {
-  font-family: var(--serif-font);
   font-style: italic;
   font-weight: 400;
   text-transform: none;
@@ -654,16 +724,15 @@ section {
 }
 .wr-title {
   font-family: var(--display-font);
-  font-size: clamp(26px, 3.4vw, 48px);
-  font-weight: 500;
+  font-size: clamp(22px, 2.8vw, 42px);
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
-  letter-spacing: -0.01em;
-  font-stretch: condensed;
+  letter-spacing: -0.03em;
+  font-stretch: normal;
   transition: color 0.2s;
 }
 .wr-title .ital {
-  font-family: var(--serif-font);
   font-style: italic;
   font-weight: 400;
   text-transform: none;
@@ -1403,9 +1472,6 @@ footer em {
 }
 
 @media (max-width: 480px) {
-  h1.hero-title {
-    font-size: 64px;
-  }
   .hero-meta-row {
     flex-direction: column;
     gap: 12px;

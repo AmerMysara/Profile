@@ -13,7 +13,7 @@ export function About() {
               <span className="ital">director's</span> eye.
             </>
           }
-          right="A seven-year arc from print and identity into code, cinematography, and generative film — one continuous obsession with making images that move someone."
+          right="A seven-year arc from print and identity into cinematography, and generative film — one continuous obsession with making images that move someone."
         />
 
         <div className="about-grid">
@@ -57,7 +57,7 @@ export function About() {
               <dt>Languages</dt>
               <dd>Arabic (native) · English (proficient)</dd>
               <dt>Currently</dt>
-              <dd>Content Creator &amp; AI Filmmaker, TECHKS</dd>
+              <dd>Content Creator &amp; AI Filmmaker</dd>
             </dl>
           </aside>
         </div>
