@@ -10,7 +10,6 @@ import { Overlays } from './components/Overlays'
 import { Reel } from './components/Reel'
 import { Services } from './components/Services'
 import { Testimonials } from './components/Testimonials'
-import { ThemeToggle } from './components/ThemeToggle'
 import { Timeline } from './components/Timeline'
 import { Work } from './components/Work'
 
