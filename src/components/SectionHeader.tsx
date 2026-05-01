@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 type Props = {
   num: string
   title: ReactNode
-  right: ReactNode
+  right?: ReactNode
 }
 
 export function SectionHeader({ num, title, right }: Props) {
