@@ -9,7 +9,7 @@ const ROWS = [
       'Directing AI-native ads, cinematic shorts and generative brand systems end-to-end; owning creative strategy across film, social and identity.',
   },
   {
-    years: 'JAN — AUG 2024',
+    years: '2023 — 2024',
     role: 'Videographer & Editor',
     co: 'Mano Marketing — Dubai',
     impact:
@@ -49,7 +49,6 @@ export function Timeline() {
               <span className="ital">one</span> arc.
             </>
           }
-          right="Print → identity → digital → video → cinematic → generative. A straight line you can only see in reverse."
         />
 
         <div className="timeline" data-reveal>
