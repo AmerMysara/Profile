@@ -62,7 +62,18 @@ export function ProjectModal({ project, onClose }: Props) {
           </button>
         </div>
 
-        <div className="modal-still" data-label={stillLabel} />
+        <div className={`modal-still${project.youtubeId ? ' has-video' : ''}`} data-label={project.youtubeId ? undefined : stillLabel}>
+          {project.youtubeId ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=0&rel=0&modestbranding=1`}
+              title={project.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{ width: '100%', height: '100%', border: 'none' }}
+            />
+          ) : null}
+        </div>
 
         <div className="modal-body">
           <div>

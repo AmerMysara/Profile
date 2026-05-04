@@ -4,6 +4,7 @@ import { SectionHeader } from './SectionHeader'
 import { ProjectModal } from './ProjectModal'
 
 export function Work() {
+  console.log('PROJECTS DATA:', PROJECTS)
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
   const [previewIdx, setPreviewIdx] = useState<number | null>(null)
   const previewRef = useRef<HTMLDivElement | null>(null)

@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export type Theme = 'dark' | 'light' | 'ivory'
-const ORDER: Theme[] = ['dark', 'light', 'ivory']
+export type Theme = 'dark' | 'ivory'
+const ORDER: Theme[] = ['dark', 'ivory']
 const STORAGE_KEY = 'amer.theme'
 
 function readStored(): Theme {
   if (typeof window === 'undefined') return 'dark'
   const v = window.localStorage.getItem(STORAGE_KEY)
-  return (v === 'light' || v === 'ivory' || v === 'dark') ? v : 'dark'
+  return (v === 'ivory' || v === 'dark') ? v : 'dark'
 }
 
 export function useTheme() {

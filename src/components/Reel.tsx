@@ -78,8 +78,7 @@ export function Reel() {
         />
 
         <p className="reel-intro" data-reveal>
-          <span>Seven years of frame-making, compressed into three minutes.</span>{' '}
-          <span className="dim">If a single still stops you — that's where I'd like to talk.</span>
+          Sit back, immerse yourself in the visuals, and put on your headphones.
         </p>
 
         <div className="reel-player" data-reveal>

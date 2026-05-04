@@ -10,6 +10,7 @@ export type Project = {
   approach: string
   outcome: string
   tools: string[]
+  youtubeId?: string
 }
 
 export const PROJECTS: Project[] = [
@@ -28,6 +29,7 @@ export const PROJECTS: Project[] = [
     outcome:
       'Selected for regional awards recognition and shortlisted in local AI film competitions; reached 10K views within the first week on social media platforms.',
     tools: ['Runway Gen-3', 'Sora', 'Kling', 'Super-16 plates', 'DaVinci Resolve', 'Suno', 'After Effects'],
+    youtubeId: 'kk9aFYR9dTk',
   },
   {
     num: '002',
@@ -53,12 +55,13 @@ export const PROJECTS: Project[] = [
     year: '2024',
     role: 'Videographer · Editor · Colorist',
     summary:
-      'Eight cross-platform campaign cuts in a single quarter — cinematic edits, color, audio sync and delivery for retail, hospitality and property clients.',
-    problem: 'Turn raw mixed-format footage into platform-ready cuts without losing a cinematic signature.',
+      'A short audiovisual work that delves into the quiet denial of violence, confronting silence through art while echoing a call for peace. The visuals are crafted using AI-generated imagery.',
+    problem: 'The quiet denial and normalization of violence, where silence allows harm to persist without confrontation or reflection.',
     approach:
-      'Built a reusable color pipeline in DaVinci and a master edit template per client, pushing platform-specific versions downstream.',
-    outcome: 'Delivery time per cut dropped ~40%; client satisfaction lift across eight back-to-back briefs.',
-    tools: ['Premiere Pro', 'DaVinci Resolve', 'After Effects', 'Lightroom', 'Audition'],
+      'Using a short audiovisual art piece that leverages AI-generated visuals to confront this silence, provoke thought, and translate abstract emotions into immersive imagery.',
+    outcome: 'Encouraging awareness and emotional reflection, breaking the state of denial, and subtly promoting a message of peace through artistic experience.',
+    tools: ['Nano banana', 'Veo3', 'Adobe premiere pro', 'CapCut'],
+    youtubeId: 'horcFUHBYm0',
   },
 
 ]

@@ -2,7 +2,6 @@ import { useTheme } from '../hooks/useTheme'
 
 const LABEL: Record<string, string> = {
   dark: 'Dark',
-  light: 'Light',
   ivory: 'Ivory',
 }
 
