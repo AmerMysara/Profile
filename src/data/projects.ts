@@ -1,3 +1,5 @@
+import lightPoster from '../assets/light-poster.jpg'
+
 export type Project = {
   num: string
   title: string
@@ -11,6 +13,7 @@ export type Project = {
   outcome: string
   tools: string[]
   youtubeId?: string
+  poster?: string
 }
 
 export const PROJECTS: Project[] = [
@@ -46,6 +49,7 @@ export const PROJECTS: Project[] = [
     outcome:
       'Edited in an uninterrupted 24-hour session and completed under intense time pressure, the film went on to be screened at the Sudan Frame Festival.',
     tools: ['Adobe Premiere', 'Envato', 'Adobe Photoshop'],
+    poster: lightPoster,
   },
   {
     num: '003',

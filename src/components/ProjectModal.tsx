@@ -62,7 +62,7 @@ export function ProjectModal({ project, onClose }: Props) {
           </button>
         </div>
 
-        <div className={`modal-still${project.youtubeId ? ' has-video' : ''}`} data-label={project.youtubeId ? undefined : stillLabel}>
+        <div className={`modal-still${(project.youtubeId || project.poster) ? ' has-video' : ''}`} data-label={(project.youtubeId || project.poster) ? undefined : stillLabel}>
           {project.youtubeId ? (
             <iframe
               src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=0&rel=0&modestbranding=1`}
@@ -71,6 +71,12 @@ export function ProjectModal({ project, onClose }: Props) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               style={{ width: '100%', height: '100%', border: 'none' }}
+            />
+          ) : project.poster ? (
+            <img 
+              src={project.poster} 
+              alt={project.plain} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
             />
           ) : null}
         </div>

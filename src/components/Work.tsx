@@ -60,7 +60,14 @@ export function Work() {
         className={`work-preview${previewProject ? ' visible' : ''}`}
         data-label={previewProject ? `${previewProject.plain.toUpperCase()} · ${previewProject.year}` : ''}
       >
-        <div className="ws-inner" />
+        <div 
+          className="ws-inner" 
+          style={previewProject?.poster ? { 
+            backgroundImage: `url(${previewProject.poster})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center' 
+          } : undefined} 
+        />
       </div>
 
       {activeProject ? (
