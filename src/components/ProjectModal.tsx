@@ -62,7 +62,16 @@ export function ProjectModal({ project, onClose }: Props) {
           </button>
         </div>
 
-        <div className={`modal-still${(project.youtubeId || project.poster) ? ' has-video' : ''}`} data-label={(project.youtubeId || project.poster) ? undefined : stillLabel}>
+        <div
+          className={`modal-still${(project.youtubeId || project.poster) ? ' has-video' : ''}${project.poster && !project.youtubeId ? ' has-poster' : ''}`}
+          data-label={(project.youtubeId || project.poster) ? undefined : stillLabel}
+          style={project.poster && !project.youtubeId ? {
+            backgroundImage: `url(${project.poster})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+          } : undefined}
+        >
           {project.youtubeId ? (
             <iframe
               src={`https://www.youtube.com/embed/${project.youtubeId}?autoplay=0&rel=0&modestbranding=1`}
@@ -73,11 +82,10 @@ export function ProjectModal({ project, onClose }: Props) {
               style={{ width: '100%', height: '100%', border: 'none' }}
             />
           ) : project.poster ? (
-            <img 
-              src={project.poster} 
-              alt={project.plain} 
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-            />
+            <>
+              <div className="modal-poster-overlay" />
+              <div className="modal-poster-title" dangerouslySetInnerHTML={{ __html: project.title }} />
+            </>
           ) : null}
         </div>
 
