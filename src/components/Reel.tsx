@@ -88,35 +88,32 @@ export function Reel() {
                 className="rf-still"
                 style={{
                   background: `${r.gradient}, repeating-linear-gradient(90deg, transparent 0, transparent 9px, rgba(255,255,255,0.02) 9px, rgba(255,255,255,0.02) 10px)`,
-                  position: 'relative',
-                  overflow: 'hidden',
                 }}
-              >
-                {r.videoId && (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${r.videoId}?autoplay=${playing && i === ci ? 1 : 0}&mute=1&controls=0&loop=1&playlist=${r.videoId}&playsinline=1`}
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      width: '120%',
-                      height: '120%',
-                      transform: 'translate(-50%, -50%)',
-                      pointerEvents: 'none',
-                      border: 'none',
-                      opacity: 0.85,
-                    }}
-                    allow="autoplay; encrypted-media"
-                    title={r.title}
-                  />
-                )}
-              </div>
-              <div className="rf-badge">{r.badge}</div>
-              <div className="rf-meta">{r.meta} · REEL 2026</div>
-              <div className="rf-meta-r">
+              />
+              {r.videoId && (
+                <iframe
+                  src={`https://www.youtube.com/embed/${r.videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${r.videoId}&playsinline=1`}
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '120%',
+                    height: '120%',
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none',
+                    border: 'none',
+                    opacity: 0.6,
+                  }}
+                  allow="autoplay; encrypted-media"
+                  title={r.title}
+                />
+              )}
+              <div className="rf-badge" style={{ position: 'relative', zIndex: 2 }}>{r.badge}</div>
+              <div className="rf-meta" style={{ position: 'relative', zIndex: 2 }}>{r.meta} · REEL 2026</div>
+              <div className="rf-meta-r" style={{ position: 'relative', zIndex: 2 }}>
                 {String(i + 1).padStart(2, '0')} / {String(REEL.length).padStart(2, '0')}
               </div>
-              <div className="rf-title" dangerouslySetInnerHTML={{ __html: r.title }} />
+              <div className="rf-title" style={{ position: 'relative', zIndex: 2 }} dangerouslySetInnerHTML={{ __html: r.title }} />
             </div>
           ))}
 
