@@ -6,13 +6,9 @@ export function Reel() {
     <section id="reel">
       <div className="container">
         <SectionHeader
-          num="§ 05 — FILM REEL"
-          title={
-            <>
-              Reel <span className="ital">twenty</span>&thinsp;26.
-            </>
-          }
-          right="A three-minute survey of recent AI-native direction — branded, personal, and in-between. Press play, pull the scrubber around, jump between cuts."
+          num="§ 05"
+          title={<>Limitless Creativity ..</>}
+          right="A journey through boundless imagination — where creativity breaks free and storytelling knows no limits. Drift between moments and lose yourself in the flow."
         />
 
         <p className="reel-intro" data-reveal style={{ textTransform: 'uppercase' }}>
