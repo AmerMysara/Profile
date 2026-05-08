@@ -3,13 +3,13 @@
 
 :root {
   --accent: #e8c547;
-  --bg: #070708;
-  --bg-elev: #0d0d10;
+  --bg: #0a0604;
+  --bg-elev: #140b08;
   --ink: #f2efe9;
   --ink-dim: #a8a49c;
-  --ink-faint: #565259;
-  --line: #1c1c1f;
-  --grain: 0.1;
+  --ink-faint: #665a52;
+  --line: #261710;
+  --grain: 0.25;
   --display-font: 'Syne', system-ui, sans-serif;
   --neutral-font: 'Outfit', system-ui, sans-serif;
   --mono-font: 'DM Mono', ui-monospace, monospace;
@@ -285,9 +285,9 @@ header.hero {
       rgba(255, 255, 255, 0.025) 6px,
       rgba(255, 255, 255, 0.025) 7px
     ),
-    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(0, 102, 255, 0.22), transparent 70%),
-    radial-gradient(ellipse 60% 70% at 75% 65%, rgba(255, 180, 120, 0.12), transparent 70%),
-    linear-gradient(180deg, #0f0f12 0%, #050506 100%);
+    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(200, 80, 0, 0.22), transparent 70%),
+    radial-gradient(ellipse 60% 70% at 75% 65%, rgba(255, 120, 0, 0.12), transparent 70%),
+    linear-gradient(180deg, #140b08 0%, #0a0604 100%);
 }
 html[data-theme='light'] .hero-still::before,
 html[data-theme='ivory'] .hero-still::before {
