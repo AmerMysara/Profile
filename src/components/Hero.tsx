@@ -1,6 +1,43 @@
+import { useEffect, useRef } from 'react'
 import profileImg from '../assets/profile.png'
 
 export function Hero() {
+  const metaRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    let ticking = false
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(() => {
+          const el = metaRef.current
+          if (!el) { ticking = false; return }
+
+          const scrollY = window.scrollY
+          // Dissolve range: 0 → 100px of scroll (fast dissolve before it scrolls away)
+          const progress = Math.min(scrollY / 100, 1)
+
+          const opacity = 1 - progress
+          const blur = progress * 18          // 0 → 18px blur
+          const translateY = progress * -30   // shift up 30px
+          const scale = 1 - progress * 0.08   // subtle shrink
+
+          el.style.opacity = String(opacity)
+          el.style.filter = `blur(${blur}px)`
+          el.style.transform = `translateY(${translateY}px) scale(${scale})`
+
+          ticking = false
+        })
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll() // set initial state
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <header className="hero" id="top">
       <div className="hero-still" />
@@ -9,7 +46,7 @@ export function Hero() {
       </div>
       <div className="hero-overlay" />
       <div className="container hero-content">
-        <div className="hero-meta-row">
+        <div className="hero-meta-row" ref={metaRef}>
           <div>
             <span className="k">Shot 001 — Dubai, UAE</span>
             <span className="v">25° 12' N / 55° 16' E</span>
@@ -29,7 +66,7 @@ export function Hero() {
             <h1 className="hero-title">
               Creating What <span className="ital">Words Can't Say,</span>
               <br />
-              Powered by Imagination<span className="accent"> & </span>AI
+              Powered by Imagination<span className="accent"> & </span>AI.
             </h1>
 
             <p className="hero-caption">
