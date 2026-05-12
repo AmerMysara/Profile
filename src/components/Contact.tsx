@@ -22,22 +22,22 @@ export function Contact() {
             data-reveal
             style={{ ['--reveal-delay' as string]: '.1s' }}
           >
-            <div>
-              <span className="k">Email&nbsp;&nbsp;&nbsp;</span>
+            <div className="cta-contact-item">
+              <span className="k">Email</span>
               <a href="mailto:amer.mysara2@gmail.com">amer.mysara2@gmail.com</a>
             </div>
-            <div>
-              <span className="k">Phone&nbsp;&nbsp;&nbsp;</span>
+            <div className="cta-contact-item">
+              <span className="k">Phone</span>
               <a href="tel:+971508108457">+971 50 810 8457</a>
             </div>
-            <div>
+            <div className="cta-contact-item">
               <span className="k">LinkedIn</span>
               <a href="https://linkedin.com/in/amer-mysara" target="_blank" rel="noopener noreferrer">
                 linkedin.com/in/amer-mysara
               </a>
             </div>
-            <div>
-              <span className="k">TikTok&nbsp;</span>
+            <div className="cta-contact-item">
+              <span className="k">TikTok</span>
               <a href="https://tiktok.com/@amer.mysara" target="_blank" rel="noopener noreferrer">
                 @amer.mysara
               </a>

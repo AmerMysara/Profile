@@ -1,43 +1,6 @@
-import { useEffect, useRef } from 'react'
 import profileImg from '../assets/profile.png'
 
 export function Hero() {
-  const metaRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    let ticking = false
-
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true
-        requestAnimationFrame(() => {
-          const el = metaRef.current
-          if (!el) { ticking = false; return }
-
-          const scrollY = window.scrollY
-          // Dissolve range: 0 → 100px of scroll (fast dissolve before it scrolls away)
-          const progress = Math.min(scrollY / 100, 1)
-
-          const opacity = 1 - progress
-          const blur = progress * 18          // 0 → 18px blur
-          const translateY = progress * -30   // shift up 30px
-          const scale = 1 - progress * 0.08   // subtle shrink
-
-          el.style.opacity = String(opacity)
-          el.style.filter = `blur(${blur}px)`
-          el.style.transform = `translateY(${translateY}px) scale(${scale})`
-
-          ticking = false
-        })
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    onScroll() // set initial state
-
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
     <header className="hero" id="top">
       <div className="hero-still" />
@@ -45,22 +8,25 @@ export function Hero() {
         <img src={profileImg} alt="Amer Mysara" />
       </div>
       <div className="hero-overlay" />
-      <div className="container hero-content">
-        <div className="hero-meta-row" ref={metaRef}>
-          <div>
-            <span className="k">Shot 001 — Dubai, UAE</span>
-            <span className="v">25° 12' N / 55° 16' E</span>
-          </div>
-          <div>
-            <span className="k">Portfolio / MMXXVI</span>
-            <span className="v">Vol. VII — seven-year arc</span>
-          </div>
-          <div style={{ textAlign: 'right' }} className="desktop-only">
-            <span className="k">Running time</span>
-            <span className="v">07:00:00 (years)</span>
-          </div>
+      <div className="hero-meta-row">
+        <div>
+          <span className="k">Shot 001</span>
+          <span className="v">Dubai, UAE</span>
         </div>
-
+        <div>
+          <span className="k">Coordinates</span>
+          <span className="v">25° 12' N / 55° 16' E</span>
+        </div>
+        <div>
+          <span className="k">Portfolio</span>
+          <span className="v">Vol. VII — MMXXVI</span>
+        </div>
+        <div className="desktop-only">
+          <span className="k">Runtime</span>
+          <span className="v">07:00:00 (years)</span>
+        </div>
+      </div>
+      <div className="container hero-content">
         <div className="hero-bottom">
           <div className="hero-left">
             <h1 className="hero-title">
