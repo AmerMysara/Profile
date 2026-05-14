@@ -4,7 +4,7 @@ const ROWS = [
   {
     years: '2024 — PRESENT',
     role: 'Content Creator & AI Filmmaker',
-    co: 'TECHKS — Dubai',
+    co: 'TECHKS — Dubai / Independent',
     impact:
       'Directing AI-native ads, cinematic shorts and generative brand systems end-to-end; owning creative strategy across film, social and identity.',
   },
@@ -24,9 +24,9 @@ const ROWS = [
   },
   {
     years: '2019 — 2020',
-    role: 'Freelance Visual & Video Producer',
+    role: 'Freelance Visual & Video Editor',
     co: 'Independent — Khartoum / Dubai',
-    impact: 'Moved from print identity into motion; first cinematic briefs, first edit bays, first commercial directing credits.',
+    impact: 'Transitioned from print design to motion and post-production; crafted cinematic narratives, managed edit bays, and delivered polished commercial video content.',
   },
   {
     years: '2018 — 2019',

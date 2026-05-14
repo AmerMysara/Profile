@@ -11,9 +11,19 @@ export function Reel() {
           right="A journey through boundless imagination — where creativity breaks free and storytelling knows no limits. Drift between moments and lose yourself in the flow."
         />
 
-        <p className="reel-intro" data-reveal style={{ textTransform: 'uppercase' }}>
-          Imagine the life with a background music
-        </p>
+        <div className="reel-intro-row" data-reveal>
+          <p className="reel-intro" style={{ textTransform: 'uppercase', margin: 0 }}>
+            Imagine the life with a background music
+          </p>
+          <a 
+            href="https://www.tiktok.com/@amer.mysara" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="tiktok-btn"
+          >
+            Check on Tiktok
+          </a>
+        </div>
 
         <div className="reel-poster-container" data-reveal>
           <img 
