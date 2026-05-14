@@ -1,48 +1,45 @@
-import profileImg from '../assets/profile.png'
+import newImg from '../assets/New.png'
 
 export function Hero() {
   return (
     <header className="hero" id="top">
-      <div className="hero-still" />
-      <div className="hero-profile-image">
-        <img src={profileImg} alt="Amer Mysara" />
-      </div>
-      <div className="hero-overlay" />
-      <div className="hero-meta-row">
-        <div>
-          <span className="k">Shot 001</span>
-          <span className="v">Dubai, UAE</span>
-        </div>
-        <div>
-          <span className="k">Coordinates</span>
-          <span className="v">25° 12' N / 55° 16' E</span>
-        </div>
-        <div>
-          <span className="k">Portfolio</span>
-          <span className="v">Vol. VII — MMXXVI</span>
-        </div>
-        <div className="desktop-only">
-          <span className="k">Runtime</span>
-          <span className="v">07:00:00 (years)</span>
-        </div>
-      </div>
       <div className="container hero-content">
-        <div className="hero-bottom">
+        <div className="hero-grid">
           <div className="hero-left">
             <h1 className="hero-title">
-              Creating What <span className="ital">Words Can't Say,</span>
-              <br />
-              Powered by Imagination<span className="accent"> & </span>AI.
+              Amer Mysara is an <span className="text-orange">AI<br />
+              Filmmaker & Content Creator.</span>
             </h1>
-
-            <p className="hero-caption">
-              Creative & AI content creator and emerging filmmaker driven by a passion for transforming ideas into powerful visual stories. With over 6 years of experience in visual storytelling, graphic design, and video production, I blend creativity and technology to craft cinematic narratives that engage, move, and inspire. Skilled in Adobe Creative Suite, sound design, and social media content strategy, I create content that not only captures attention but leaves a lasting impression.
-            </p>
+            <div className="hero-socials">
+              <a href="#">Behance</a> — <a href="#">LinkedIn</a> — <a href="#">Instagram</a>
+            </div>
           </div>
-          <div className="hero-right" />
+          <div className="hero-right">
+            <div className="hero-profile-frame">
+              <img src={newImg} alt="Amer Mysara" />
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-meta-row-clean">
+          <div>
+            <span className="k">Shot 001</span>
+            <span className="v">Dubai, UAE</span>
+          </div>
+          <div>
+            <span className="k">Coordinates</span>
+            <span className="v">25° 12' N / 55° 16' E</span>
+          </div>
+          <div>
+            <span className="k">Portfolio</span>
+            <span className="v">Vol. VII — MMXXVI</span>
+          </div>
+          <div className="desktop-only">
+            <span className="k">Runtime</span>
+            <span className="v">07:00:00 (years)</span>
+          </div>
         </div>
       </div>
-      <div className="hero-scroll">SCROLL ↓ REEL.01</div>
     </header>
   )
 }

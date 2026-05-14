@@ -30,7 +30,7 @@ export function Work() {
         <div className="container">
           <SectionHeader
             num="§ 04 — SELECTED WORK"
-            title="Some of creative work"
+            title={<>Selected<br /><span className="ital">Works</span>.</>}
             right="A cross-section of branded film, personal experiments and social-native storytelling. Click any title to open the case study."
           />
 

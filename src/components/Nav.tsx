@@ -2,10 +2,10 @@ import type { MouseEvent } from 'react'
 import { ThemeToggle } from './ThemeToggle'
 
 const LINKS = [
-  { href: '#about', idx: '02', label: 'About' },
-  { href: '#work', idx: '04', label: 'Work' },
-  { href: '#reel', idx: '05', label: 'Reel' },
-  { href: '#contact', idx: '09', label: 'Contact' },
+  { href: '#about', label: 'About' },
+  { href: '#work', label: 'Work' },
+  { href: '#reel', label: 'Reel' },
+  { href: '#contact', label: 'Contact' },
 ]
 
 function smoothScroll(e: MouseEvent<HTMLAnchorElement>) {
@@ -29,7 +29,6 @@ export function Nav() {
           {LINKS.map((l) => (
             <li key={l.href}>
               <a href={l.href} onClick={smoothScroll}>
-                <span className="nav-idx">{l.idx}</span>
                 {l.label}
               </a>
             </li>
