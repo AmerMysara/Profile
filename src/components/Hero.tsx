@@ -11,7 +11,7 @@ export function Hero() {
               Filmmaker & Content Creator.</span>
             </h1>
             <div className="hero-socials">
-              <a href="#">Behance</a> — <a href="#">LinkedIn</a> — <a href="#">Instagram</a>
+              <a href="https://www.tiktok.com/@amer.mysara" target="_blank" rel="noopener noreferrer">TikTok</a> — <a href="https://www.linkedin.com/in/amer-mysara/" target="_blank" rel="noopener noreferrer">LinkedIn</a> — <a href="https://www.instagram.com/amer_mysara" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
           </div>
           <div className="hero-right">
