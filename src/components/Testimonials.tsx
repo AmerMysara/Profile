@@ -56,7 +56,7 @@ export function Testimonials() {
         <h2 className="creativity-headline">
           It's all about
           <br />
-          <em>Creativity</em>
+          <em className="text-orange">Creativity</em>
         </h2>
         <div className="creativity-rule" />
       </div>
