@@ -24,8 +24,8 @@ export function useCursor() {
       my = e.clientY
     }
     const tick = () => {
-      cx += (mx - cx) * 0.22
-      cy += (my - cy) * 0.22
+      cx += (mx - cx) * 0.85
+      cy += (my - cy) * 0.85
       cursor.style.transform = `translate(${cx - cursor.offsetWidth / 2}px, ${cy - cursor.offsetHeight / 2}px)`
       raf = requestAnimationFrame(tick)
     }
