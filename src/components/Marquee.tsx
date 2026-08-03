@@ -1,4 +1,5 @@
 const ITEMS = [
+  { pre: 'AI', text: 'FILMMAKER' },
   { text: 'AI FILMMAKING' },
   { pre: 'cinematic', text: 'DIRECTION' },
   { text: 'GENERATIVE VIDEO' },

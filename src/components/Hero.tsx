@@ -7,8 +7,7 @@ export function Hero() {
         <div className="hero-grid">
           <div className="hero-left">
             <h1 className="hero-title">
-              Amer Mysara is an <span className="text-orange">AI<br />
-              Filmmaker & Content Creator.</span>
+              Amer Mysara is a <span className="text-orange">Filmmaker</span> &amp; <span className="text-blue">Content Creator.</span>
             </h1>
             <div className="hero-socials">
               <a href="https://www.tiktok.com/@amer.mysara" target="_blank" rel="noopener noreferrer">TikTok</a> — <a href="https://www.linkedin.com/in/amer-mysara/" target="_blank" rel="noopener noreferrer">LinkedIn</a> — <a href="https://www.instagram.com/amer_mysara" target="_blank" rel="noopener noreferrer">Instagram</a>

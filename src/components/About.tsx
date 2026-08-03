@@ -41,7 +41,7 @@ export function About() {
               <dt>Based</dt>
               <dd>Dubai, United Arab Emirates</dd>
               <dt>Focus</dt>
-              <dd>AI filmmaking · cinematic shorts · branded film · creative direction</dd>
+              <dd>filmmaking · AI filmmaking · cinematic shorts · branded film · creative direction</dd>
               <dt>Experience</dt>
               <dd>7+ years, senior</dd>
               <dt>Audience</dt>
@@ -57,7 +57,7 @@ export function About() {
               <dt>Languages</dt>
               <dd>Arabic (native) · English (proficient)</dd>
               <dt>Currently</dt>
-              <dd>Content Creator &amp; AI Filmmaker</dd>
+              <dd>Content Creator &amp; Filmmaker</dd>
             </dl>
           </aside>
         </div>

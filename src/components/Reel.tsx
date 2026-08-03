@@ -29,12 +29,7 @@ export function Reel() {
           <img 
             src={posterImg} 
             alt="Film Reel Collage Poster" 
-            style={{ 
-              width: '100%', 
-              height: 'auto', 
-              display: 'block',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.4)' 
-            }} 
+            className="reel-poster-img"
           />
         </div>
       </div>

@@ -3,7 +3,7 @@ import { SectionHeader } from './SectionHeader'
 const ROWS = [
   {
     years: '2024 — PRESENT',
-    role: 'Content Creator & AI Filmmaker',
+    role: 'Content Creator & Filmmaker',
     co: 'TECHKS — Dubai / Independent',
     impact:
       'Directing AI-native ads, cinematic shorts and generative brand systems end-to-end; owning creative strategy across film, social and identity.',
